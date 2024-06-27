@@ -13,8 +13,7 @@ services:
 
   db:
     depends_on:
-      db-init:
-        condition: service_completed_successfully
+      - db-init
     extends:
       file: ./services/db.yml
       service: db
@@ -70,8 +69,7 @@ services:
 
   stats-db:
     depends_on:
-      stats-db-init:
-        condition: service_completed_successfully
+      - stats-db-init
     extends:
       file: ./services/stats.yml
       service: stats-db
